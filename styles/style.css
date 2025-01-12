@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Afacad+Flux:wght@100..1000&family=Dancing+Script:wght@400..700&family=Liu+Jian+Mao+Cao&family=Lustria&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@400;500;700&display=swap');
 
+* {
+    transition: all 0.3s ease-in-out;
+}
 
 html {
     scroll-behavior: smooth;
@@ -216,66 +219,177 @@ h2 {
     background: #5075CA;
     width: 95%;
     height: 100%;
+    animation: growBar1 1s ease-out forwards;
 }
 
 .colored-bar-2 {
     background: #5075CA;
     width: 90%;
     height: 100%;
+    animation: growBar2 1s ease-out forwards;
 }
 
 .colored-bar-3 {
     background: #5075CA;
     width: 87%;
     height: 100%;
+    animation: growBar3 1s ease-out forwards;
 }
 
 .colored-bar-4 {
     background: #5075CA;
     width: 85%;
     height: 100%;
+    animation: growBar4 1s ease-out forwards;
 }
 
 .colored-bar-5 {
     background: #5075CA;
     width: 85%;
     height: 100%;
+    animation: growBar5 1s ease-out forwards;
 }
 
 .colored-bar-6 {
     background: #5075CA;
     width: 90%;
     height: 100%;
+    animation: growBar6 1s ease-out forwards;
 }
 
 .colored-bar-7 {
     background: #5075CA;
     width: 85%;
     height: 100%;
+    animation: growBar7 1s ease-out forwards;
 }
 
 .colored-bar-8 {
     background: #5075CA;
     width: 92%;
     height: 100%;
+    animation: growBar8 1s ease-out forwards;
 }
 
 .colored-bar-9 {
     background: #5075CA;
     width: 95%;
     height: 100%;
+    animation: growBar9 1s ease-out forwards;
 }
 
 .colored-bar-10 {
     background: #5075CA;
     width: 95%;
     height: 100%;
+    animation: growBar10 1s ease-out forwards;
 }
 
 .colored-bar-11 {
     background: #5075CA;
     width: 85%;
     height: 100%;
+    animation: growBar11 1s ease-out forwards;
+}
+
+
+@keyframes growBar1 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 95%; 
+    }
+}
+
+@keyframes growBar2 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 95%; 
+    }
+}
+
+@keyframes growBar3 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 87%; 
+    }
+}
+
+@keyframes growBar4 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 85%; 
+    }
+}
+
+@keyframes growBar5 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 85%; 
+    }
+}
+
+@keyframes growBar6 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 90%; 
+    }
+}
+
+@keyframes growBar7 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 85%; 
+    }
+}
+
+@keyframes growBar8 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 92%; 
+    }
+}
+
+@keyframes growBar9 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 95%; 
+    }
+}
+
+@keyframes growBar10 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 95%; 
+    }
+}
+
+@keyframes growBar11 {
+    from {
+        width: 0;
+    }
+    to {
+        width: 85%; 
+    }
 }
 
 .percent {
@@ -302,6 +416,7 @@ h2 {
 
 .projects-container {
     display: flex;
+    gap: 5em;
     justify-content: space-between;
 }
 
@@ -336,13 +451,10 @@ h2 {
 }
 
 
-.proj-content span .github-link{
+.proj-content .github-link a i{
     color: #000;
 }
 
-.proj-content span .github-link:active{
-    color: #000;
-}
 
 .experience {
     display: flex;
@@ -358,7 +470,7 @@ h2 {
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(2px);
     width: 60%;
-    padding: 2em;
+    padding: 4em;
     overflow-x: hidden;
 }
 
@@ -423,6 +535,34 @@ h2 {
     padding-bottom: 50px;
     left: 98.2%;
 }
+
+.timeline-item {
+    opacity: 0;
+    transform: translateX(0); 
+    animation: slideIn 0.8s ease-out forwards;
+}
+
+.timeline-item.left {
+    transform: translateX(-50px); 
+    animation-delay: 0.5s; 
+}
+
+.timeline-item.right {
+    transform: translateX(50px);
+    animation-delay: 0.5s; 
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); 
+    }
+}
+
+
 
 .contact-form {
     border: 2px solid #5075CA;
@@ -550,6 +690,6 @@ footer {
     padding: 0.8em;
 }
 
-.social-media ul li a i:active{
+.social-media ul li a i{
     color: #000;
 }
